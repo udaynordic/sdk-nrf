@@ -20,6 +20,9 @@ manifest:
     # NCS repositories are hosted here.
     - name: ncs
       url-base: https://github.com/nrfconnect
+    # Fork remotes for sample/wifi-htol (see branch sample/wifi-htol).
+    - name: udaynordic
+      url-base: https://github.com/udaynordic
     # Third-party repository sources:
     - name: zephyrproject
       url-base: https://github.com/zephyrproject-rtos
@@ -64,8 +67,9 @@ manifest:
     # https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/zephyr/introduction/index.html
     # https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/zephyr/guides/modules.html
     - name: zephyr
+      remote: udaynordic
       repo-path: sdk-zephyr
-      revision: bce4f98109f78b1f2faa3d5129d61e4e8c0d50a2
+      revision: 3ed4c054d7a57001f5ff8f252cecb28831bc8fb2
       import:
         # In addition to the zephyr repository itself, NCS also
         # imports the contents of zephyr/west.yml at the above
@@ -148,9 +152,12 @@ manifest:
       repo-path: sdk-oberon-psa-crypto
       revision: 2e87fdd61cdd411d2e4ac5b369f909584bae624b
     - name: nrfxlib
+      remote: udaynordic
       repo-path: sdk-nrfxlib
       path: nrfxlib
-      revision: 01f189a105bc362d9b9e3585913354e107bc82d0
+      revision: 7fcf977ad918a9743fe4bea9947d2f851a8a8dc1
+    # TF-M UMAC start for htol: cherry-pick 4e03fedcafee2fc47dddaa494406f3ae73ca959d
+    # on sample/wifi-htol until sdk-trusted-firmware-m is on the udaynordic fork.
     - name: trusted-firmware-m
       repo-path: sdk-trusted-firmware-m
       path: modules/tee/tf-m/trusted-firmware-m
