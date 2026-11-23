@@ -1,0 +1,19 @@
+sample:
+  description: Minimal nRF71 Wi-Fi ROM patch / HTOL test harness
+  name: Wi-Fi HTOL
+tests:
+  sample.nrf7120.htol:
+    sysbuild: true
+    build_only: true
+    integration_platforms:
+      - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120/cpuapp/ns
+    platform_allow:
+      - nrf7120dk/nrf7120/cpuapp
+      - nrf7120dk/nrf7120/cpuapp/ns
+      - nrf7120dk/nrf7120e/cpuapp
+      - nrf7120dk/nrf7120e/cpuapp/ns
+    tags:
+      - ci_build
+      - sysbuild
+      - ci_samples_nrf71_wifi
